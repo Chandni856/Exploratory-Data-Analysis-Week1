@@ -12,10 +12,10 @@ data_load_subset <-subset(data_load, data_load$Date >= "2007-02-01" & data_load$
 
 
 ##COmbine Date + Time into new column
-data_load_subset$TS <- as.POSIXct(paste(data_load_subset$Date, data_load_subset$Time))
+data_load_subset$TS <- as.POSIXct(paste(data_load_subset$Date, data_load_subset$Time, seperator = " "))
 
 
 ##Output Plot to 480 x 480 png
-png("plot1.png", height = 480, width = 480)
-hist(data_load_subset$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", col = "red")
+png("plot2.png", height = 480, width = 480)
+plot(data_load_subset$Global_active_power~data_load_subset$TS, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
 dev.off()
