@@ -1,4 +1,4 @@
-##Load Data File
+##Load the Data File
 
 data_load <- read.csv("./household_power_consumption.txt", header=TRUE, sep=";", 
                       stringsAsFactors=FALSE, na.strings = "?", dec=".")
